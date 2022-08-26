@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script type="module">
+    import {Vue} from './main.js'
+    
+    window.vm = new Vue({
+        data:{
+            person:{
+                name:'lyjk',
+                age:20
+            }
+        }
+    })
+
+    window.unWatch = vm.$watch('_data.person',(newVal,oldVal) =>{
+        console.log('监听到了')
+    },{immediate:true})
+</script>
+</html>
